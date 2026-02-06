@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text highlighter DOM</title>
+    <style>
+      .highlight {
+        background-color: yellow;
+        padding: 10px;
+        border-left: 4px solid orange;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="page-title">Text highlighter</h1>
+    <p class="paragraph">Paragraph1</p>
+    <p class="paragraph">Paragraph2</p>
+    <p class="paragraph">Paragraph3</p>
+    <p class="paragraph">Paragraph4</p>
+    <button id="highlight-btn">Highlight All</button>
+    <button id="clear-btn">Clear Highlights</button>
+    <button id="toggle-btn">Toggle First Paragraph</button>
+
+    <script defer>
+      //Select all paragraphs with class paragraph
+      const allPara = document.querySelectorAll(".paragraph");
+      //Error handling for all paragraphs with class paragraph selection
+      if (!allPara) {
+        console.error("Class paragraph not found");
+      } else {
+        console.log("All paragraph:", allPara);
+      }
+
+      //Select first paragraphs with class paragraph
+      const firstPara = document.querySelector(".paragraph");
+      //Error handling for frist paragraph with class paragraph selection
+      if (!firstPara) {
+        console.error("Class paragraph not found");
+      } else {
+        console.log("First paragraph:", firstPara);
+      }
+
+      //Select button with highlight-btn id
+      const highlightBtn = document.getElementById("highlight-btn");
+      //Error handling for button with highlight-btn id selection
+      if (!highlightBtn) {
+        console.error("Id highlight-btn not found");
+      } else {
+        console.log("Highlight-btn:", highlightBtn);
+      }
+
+      //Select button with clear-btn id
+      const clearBtn = document.getElementById("clear-btn");
+      //Error handling for button with clear-btn id selection
+      if (!clearBtn) {
+        console.error("Id clear-btn not found");
+      } else {
+        console.log("Clear-btn:", clearBtn);
+      }
+
+      //Select button with toggle-btn id
+      const toggleBtn = document.getElementById("toggle-btn");
+      //Error handling for button with clear-btn id selection
+      if (!toggleBtn) {
+        console.error("Id toggle-btn not found");
+      } else {
+        console.log("Toggle-btn:", toggleBtn);
+      }
+
+      //Event handling to highlight all paragraphs
+      highlightBtn.addEventListener("click", () => {
+        Para.forEach((p) => {
+          p.classList.add("highlight");
+        });
+      });
+
+      //Event handling to remove highlight from all paragraphs
+      clearBtn.addEventListener("click", () => {
+        allPara.forEach((p) => {
+          p.classList.remove("highlight");
+        });
+      });
+
+      //Event handling to highlight and remove highlight from first paragraph
+      toggleBtn.addEventListener("click", () => {
+        if (firstPara) {
+          firstPara.classList.toggle("highlight");
+        }
+      });
+    </script>
+  </body>
+</html>

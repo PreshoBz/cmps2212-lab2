@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Practice</title>
+  </head>
+  <body>
+    <h1 id="title">DOM Selection Lab</h1>
+    <p class="info">Hello</p>
+    <p class="info">Hi</p>
+    <p class="info">Hello World!</p>
+    <div id="conntainer">
+      <button class="action-btn"></button>
+      <button class="action-btn"></button>
+      <button id="special-btn"></button>
+    </div>
+    <script defer>
+      //Selecting title element
+      const title = document.getElementById("title");
+      //Error handling for title element selection
+      if (!title) {
+        console.error("Title element not found");
+      } else {
+        console.log("Title:", title);
+      }
+
+      //Selecting first paragraph
+      const firstPara = document.querySelector(".info");
+      //Error handling for first paragraph selection
+      if (!firstPara) {
+        console.error("Info class not found");
+      } else {
+        console.log("Class:", firstPara);
+      }
+
+      //Selecing all buttons with class action-btn
+      const buttons = document.querySelectorAll(".action-btn");
+      //Error handling for all buttons selection
+      if (buttons.length > 0) {
+        console.log("Class:", buttons);
+      } else {
+        console.error("Action-btn class not found");
+      }
+    </script>
+  </body>
+</html>

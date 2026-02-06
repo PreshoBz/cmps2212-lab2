@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color changer dom</title>
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: lightgray;
+        border: 2px solic black;
+        margin: 10px;
+        padding: 20px;
+        display: inline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="main-heading">Color Changer Lab</h1>
+    <div id="box1" class="box">Box1</div>
+    <div id="box2" class="box">Box2</div>
+    <div id="box3" class="box">Box3</div>
+    <button id="btn-red">Make Red</button>
+    <button id="btn-blue">Make Blue</button>
+    <button id="btn-green">Make Green</button>
+    <button id="reset-btn">Reset All</button>
+
+    <script defer>
+      //Select all boxes with class box
+      const box = document.querySelectorAll(".box");
+      //Error handling for box class selection
+      if (!box) {
+        console.error("Box class not found");
+      } else {
+        console.log("Box:", box);
+      }
+
+      //Select button with id btn-red
+      const btnred = document.getElementById("btn-red");
+      //Error handling for btn-red id selection
+      if (!btnred) {
+        console.error("Btn-red id not found");
+      } else {
+        console.log("Btn-red", btnred);
+      }
+
+      //Select button with id btn-blue
+      const btnblue = document.getElementById("btn-blue");
+      //Error handling for btn-blue id selection
+      if (!btnred) {
+        console.error("Btn-blue id not found");
+      } else {
+        console.log("Btn-blue", btnblue);
+      }
+
+      //Select button with id btn-green
+      const btngreen = document.getElementById("btn-green");
+      //Error handling for btn-blue id selection
+      if (!btngreen) {
+        console.error("Btn-green id not found");
+      } else {
+        console.log("Btn-green", btngreen);
+      }
+
+      //Select button with id reset
+      const resetbtn = document.getElementById("reset-btn");
+      //Error handling for btn-reset id selection
+      if (!resetbtn) {
+        console.error("Reset-btn id not found");
+      } else {
+        console.log("Reset-btn", resetbtn);
+      }
+
+      //Event handling to change boxes color to red
+      btnred.addEventListener("click", () => {
+        box.forEach((box) => {
+          box.style.backgroundColor = "red";
+        });
+      });
+
+      //Event handling to change boxes color to blue
+      btnblue.addEventListener("click", () => {
+        box.forEach((box) => {
+          box.style.backgroundColor = "blue";
+        });
+      });
+
+      //Event handling to change boxes color to green
+      btngreen.addEventListener("click", () => {
+        box.forEach((box) => {
+          box.style.backgroundColor = "green";
+        });
+      });
+
+      //Event handling to change boxes color to original color
+      resetbtn.addEventListener("click", () => {
+        box.forEach((box) => {
+          box.style.backgroundColor = "lightgray";
+        });
+      });
+    </script>
+  </body>
+</html>
